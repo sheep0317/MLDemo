@@ -13,8 +13,8 @@ namespace MLDemoML.ConsoleApp
 {
     public static class ModelBuilder
     {
-        private static string TRAIN_DATA_FILEPATH = @"C:\Users\chaos\AppData\Local\Temp\dde370b2-81b0-41f2-b988-e004409e3461.tsv";
-        private static string MODEL_FILEPATH = @"C:\Users\chaos\AppData\Local\Temp\MLVSTools\MLDemoML\MLDemoML.Model\MLModel.zip";
+        private static string TRAIN_DATA_FILEPATH = "dde370b2-81b0-41f2-b988-e004409e3461.tsv";
+        private static string MODEL_FILEPATH = "MLModel.zip";
         // Create MLContext to be shared across the model creation workflow objects 
         // Set a random seed for repeatable/deterministic results across multiple trainings.
         private static MLContext mlContext = new MLContext(seed: 1);
