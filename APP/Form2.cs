@@ -55,7 +55,7 @@ namespace MLAPPML.ConsoleApp
             try
             {
 
-                if (videoCaptureDevice.IsRunning)
+                if (videoCaptureDevice !=null)
                 {
                     videoCaptureDevice.SignalToStop();
 
@@ -71,8 +71,10 @@ namespace MLAPPML.ConsoleApp
                     {
                         videoCaptureDevice.Stop();
                     }
-
-
+                }
+                else
+                {
+                    return;
                 }
             }
             catch { }
