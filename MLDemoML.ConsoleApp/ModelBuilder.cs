@@ -7,14 +7,14 @@ using System.Linq;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using MLDemoML.Model;
-using Microsoft.ML.Vision;
 
 namespace MLDemoML.ConsoleApp
 {
     public static class ModelBuilder
     {
-        private static string TRAIN_DATA_FILEPATH = "dde370b2-81b0-41f2-b988-e004409e3461.tsv";
-        private static string MODEL_FILEPATH = "MLModel.zip";
+        private static string TRAIN_DATA_FILEPATH = @"C:\Users\chaos\AppData\Local\Temp\37d0df1d-c023-4ffc-a455-1f00e1ad702f.tsv";
+        private static string MODEL_FILE = ConsumeModel.MLNetModelPath;
+
         // Create MLContext to be shared across the model creation workflow objects 
         // Set a random seed for repeatable/deterministic results across multiple trainings.
         private static MLContext mlContext = new MLContext(seed: 1);
@@ -39,7 +39,7 @@ namespace MLDemoML.ConsoleApp
             Evaluate(mlContext, trainingDataView, trainingPipeline);
 
             // Save model
-            SaveModel(mlContext, mlModel, MODEL_FILEPATH, trainingDataView.Schema);
+            SaveModel(mlContext, mlModel, MODEL_FILE, trainingDataView.Schema);
         }
 
         public static IEstimator<ITransformer> BuildTrainingPipeline(MLContext mlContext)
@@ -49,7 +49,7 @@ namespace MLDemoML.ConsoleApp
                                       .Append(mlContext.Transforms.LoadRawImageBytes("ImageSource_featurized", null, "ImageSource"))
                                       .Append(mlContext.Transforms.CopyColumns("Features", "ImageSource_featurized"));
             // Set the training algorithm 
-            var trainer = mlContext.MulticlassClassification.Trainers.ImageClassification(new ImageClassificationTrainer.Options() { LabelColumnName = "Label", FeatureColumnName = "Features" })
+            var trainer = mlContext.MulticlassClassification.Trainers.ImageClassification(labelColumnName: @"Label", featureColumnName: "Features")
                                       .Append(mlContext.Transforms.Conversion.MapKeyToValue("PredictedLabel", "PredictedLabel"));
 
             var trainingPipeline = dataProcessPipeline.Append(trainer);
