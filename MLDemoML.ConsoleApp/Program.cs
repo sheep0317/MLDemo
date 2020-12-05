@@ -12,7 +12,7 @@ namespace MLDemoML.ConsoleApp
             // Create single instance of sample data from first line of dataset for model input
             ModelInput sampleData = new ModelInput()
             {
-                ImageSource = @"C:\Users\chaos\Desktop\data-MLnew\data ML(new)\a\a1.jpg",
+                ImageSource = @"C:\Users\chaos\Desktop\smallset(with Vietnamese)\a\a1 (Custom).png",
             };
 
             // Make a single prediction on the sample data and print results

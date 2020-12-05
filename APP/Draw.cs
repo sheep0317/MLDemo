@@ -16,7 +16,7 @@ namespace MLAPPML.ConsoleApp
         public DrawNote()
         {
             color = Color.Black;
-            pen = new Pen(color, 5);
+            pen = new Pen(color, 4);
             isDraw = false;
         }
     }
