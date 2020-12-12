@@ -92,9 +92,9 @@ namespace MLAPPML.ConsoleApp
             var predictionResult = ConsumeModel.Predict(sampleData);
             this.richTextBox1.Text = $"Predicted Label value {predictionResult.Prediction} \nPredicted Label scores: [{String.Join(",", predictionResult.Score)}]";
 
-            Console.WriteLine("Using model to make single prediction -- Comparing actual Label with predicted Label from sample data...\n\n");
-            Console.WriteLine($"ImageSource: {sampleData.ImageSource}");
-            Console.WriteLine($"\n\nPredicted Label value {predictionResult.Prediction} \nPredicted Label scores: [{String.Join(",", predictionResult.Score)}]\n\n");
+            //Console.WriteLine("Using model to make single prediction -- Comparing actual Label with predicted Label from sample data...\n\n");
+            //Console.WriteLine($"ImageSource: {sampleData.ImageSource}");
+            //Console.WriteLine($"\n\nPredicted Label value {predictionResult.Prediction} \nPredicted Label scores: [{String.Join(",", predictionResult.Score)}]\n\n");
             this.pictureBox1.CreateGraphics().Clear(Color.White);
             this.pictureBox1.Image = new Bitmap(this.pictureBox1.ClientSize.Width, this.pictureBox1.ClientSize.Height);
         }
