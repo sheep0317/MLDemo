@@ -90,7 +90,7 @@ namespace MLAPPML.ConsoleApp
             };
             //// Make a single prediction on the sample data and print results
             var predictionResult = ConsumeModel.Predict(sampleData);
-            this.richTextBox1.Text = $"Predicted Label value {predictionResult.Prediction} \nPredicted Label scores: [{String.Join(",", predictionResult.Score)}]";
+            this.richTextBox1.Text = $"Predicted Label value {predictionResult.Prediction} \nPredicted Label scores: [{String.Join("\n", predictionResult.Score)}]";
 
             //Console.WriteLine("Using model to make single prediction -- Comparing actual Label with predicted Label from sample data...\n\n");
             //Console.WriteLine($"ImageSource: {sampleData.ImageSource}");
