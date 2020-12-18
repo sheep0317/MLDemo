@@ -99,29 +99,11 @@ namespace MLAPPML.ConsoleApp
             this.pictureBox1.Image = new Bitmap(this.pictureBox1.ClientSize.Width, this.pictureBox1.ClientSize.Height);
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            //var t = new Thread((ThreadStart)(() =>
-            //{
-            //    openFileDialog1.InitialDirectory = @"C:\";
-            //    openFileDialog1.Title = "Browse Text Files";
-            //    openFileDialog1.DefaultExt = "jpg";
-            //    openFileDialog1.Filter = "img files (*.jpg)|*.jpg";
-            //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //    {
-            //        richTextBox1.Text = openFileDialog1.FileName;
-            //    }
-            //}));
-        }
+
 
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-        
         }
     }
 }
