@@ -46,7 +46,9 @@ namespace MLAPPML.ConsoleApp
             if (drawnote.isDraw)
             {
                 Graphics G = Graphics.FromImage(pictureBox1.Image);
+                G.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                 Graphics thum = this.pictureBox1.CreateGraphics();
+                thum.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
                 thum.DrawLine(drawnote.pen, drawnote.X, drawnote.Y, e.X, e.Y);
 
                 G.DrawLine(drawnote.pen, drawnote.X, drawnote.Y, e.X, e.Y);
